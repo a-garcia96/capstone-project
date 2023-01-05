@@ -150,3 +150,47 @@ code {
   padding: 2em 0;
   font-weight: bold;
 }
+
+/* HEADER STYLING */
+
+.header {
+  min-height: 50vh;
+  background-color: #495E57;
+  color: #edefee;
+  padding: 0 1em;
+}
+
+.header__col-1 {
+  padding: 2.5em 0;
+}
+
+/* .header__col-1 > *:not(:last-child) {
+  margin-bottom: 1em;
+} */
+
+.header__title {
+  color: #B89E13;
+}
+
+.header__location {
+  margin-bottom: 0.5em;
+}
+
+.header__text {
+  line-height: 2.5;
+  margin-bottom: 1em;
+}
+
+.header__ctaBtn {
+  background-color: #F4CE12;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  color: #0f1311;
+}
+
+.header__image {
+  border-radius: 30px;
+  transform: translateY(50%);
+  position: absolute;
+}
