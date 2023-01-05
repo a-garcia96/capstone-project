@@ -1,56 +1,79 @@
 /* CSS RESET */
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, *::before, *::after {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
-/*
-  2. Remove default margin
-*/
-* {
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
-/*
-  3. Allow percentage-based heights in the application
-*/
-html, body {
-  height: 100%;
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
 }
-/*
-  Typographic tweaks!
-  4. Add accessible line-height
-  5. Improve text rendering
-*/
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
 body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
-/*
-  6. Improve media defaults
-*/
-img, picture, video, canvas, svg {
-  display: block;
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
   max-width: 100%;
+  display: block;
 }
-/*
-  7. Remove built-in form typography styles
-*/
-input, button, textarea, select {
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
-/*
-  8. Avoid text overflows
-*/
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-/*
-  9. Create a root stacking context
-*/
-#root, #__next {
-  isolation: isolate;
-}
+
 
 body {
   margin: 0;
@@ -68,6 +91,11 @@ code {
 
 
 /* NAVIGATION STYLING */
+
+.nav {
+  position: relative;
+}
+
 .nav__header {
   display: flex;
   flex-direction: row;
@@ -75,25 +103,50 @@ code {
   padding: 2em;
 }
 
-.nav__list {
-  background-color: green;
-  list-style: none;
-  margin-left: -40px;
-  position: relative;
-  z-index: 0;
-  visibility: hidden;
-  transition: visibility 2s;
+.nav__header button {
+  background-color: #fff;
+  border: none;
 }
 
-.show {
-  visibility: visible;
+.nav__list {
+  background-color: #495E57;
+  list-style: none;
+  margin-top: 0;
+  margin-left: -40px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 0;
+  transition: height 200ms;
+}
+
+/* Utility class for displaying navbar back to original height. Had to set explicit height in order to animate. */
+
+.show--navbar {
+  height: 533px;
 }
 
 .nav__list > *:not(:last-child) {
-  border-bottom: 1px solid gold;
+  border-bottom: 1px solid #B89E13;
 }
 
 .nav__item {
   text-align: center;
-  padding: 1em 0;
+  opacity: 0;
+  transition: opacity 50ms;
+}
+
+/* animation for showing the nav items. */
+
+.show--navItem {
+  opacity: 1;
+}
+
+.nav__link {
+  color: #c8cfcd;
+  display: block;
+  height: 100%;
+  padding: 2em 0;
+  font-weight: bold;
 }
