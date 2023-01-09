@@ -61,9 +61,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
@@ -87,6 +87,24 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*  COMPONENTS */
+.btn {
+  background-color: #F4CE12;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn > a {
+  padding: 0.5em;
+  display: block;
+  text-decoration: none;
+  color:#0f1311;;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
 
 
@@ -127,7 +145,7 @@ code {
   height: 533px;
 }
 
-.nav__list > *:not(:last-child) {
+.nav__list>*:not(:last-child) {
   border-bottom: 1px solid #B89E13;
 }
 
@@ -164,9 +182,9 @@ code {
   padding: 2.5em 0;
 }
 
-/* .header__col-1 > *:not(:last-child) {
-  margin-bottom: 1em;
-} */
+.header__col-2 {
+  padding: 2.5em 0;
+}
 
 .header__title {
   color: #B89E13;
@@ -181,16 +199,94 @@ code {
   margin-bottom: 1em;
 }
 
-.header__ctaBtn {
-  background-color: #F4CE12;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5em;
-  color: #0f1311;
-}
-
 .header__image {
   border-radius: 30px;
-  transform: translateY(50%);
-  position: absolute;
+  max-width: 350px;
+  width: 100%;
+  height: 400px;
+  background-image: url(./assets/restaurantfood.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+main {
+  padding: 0 1em;
+}
+
+footer {
+  padding: 0 1em;
+}
+
+@media (min-width: 800px) {
+  h1 {
+    font-size: 4em;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.5em;
+  }
+
+  /* HEADER STYLES */
+  .header {
+    display: flex;
+  }
+
+  .header__col-1 {
+    width: 50%;
+    margin-right: 20px;
+  }
+
+  .header__col-2 {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    width: 1350px;
+    margin: 0 auto;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  /* STYLING FOR THE HEADER */
+  .header__image {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+  }
+
+  /* STYLING FOR THE SPECIALS SECTION */
+  .specials {
+    margin-top: 10em;
+  }
+
+  .specials__heading {
+    font-size: 3em;
+  }
+
+  .specials__col-1 {
+    width: 50%;
+  }
+
+  .specials__col-2 {
+    width: 50%;
+    align-self: center;
+  }
+
+  .specials__btn {
+    margin-left: 25%;
+  }
+
+  .specials__btn {
+    font-size: 1.5em;
+  }
+
 }
