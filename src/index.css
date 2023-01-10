@@ -232,17 +232,16 @@ footer {
   }
 
   /* HEADER STYLES */
-  .header {
+  .header > .container  {
     display: flex;
-  }
-
-  .header__col-1 {
-    width: 50%;
-    margin-right: 20px;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .header__col-2 {
-    width: 50%;
+    width: 100%;
   }
 }
 
@@ -288,5 +287,4 @@ footer {
   .specials__btn {
     font-size: 1.5em;
   }
-
 }
