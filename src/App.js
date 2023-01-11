@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Card from './components/Card';
+import greekSalad from './assets/greek salad.jpg'
 
 function App() {
   return (
@@ -22,7 +23,11 @@ function App() {
               </div>
             </div>
             <div className="row">
-              <Card recipeTitle="Greek Salad" recipePrice="12.99" recipeDesc="The famouse greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese style feta cheese, garnished with crunchy garlic and rosemary croutons."/>
+              <Card recipeTitle="Greek Salad"
+                recipePrice="12.99"
+                recipeDesc="The famouse greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese style feta cheese, garnished with crunchy garlic and rosemary croutons."
+                recipeImg={greekSalad}
+              />
             </div>
           </section>
         </div>
