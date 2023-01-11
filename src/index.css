@@ -21,8 +21,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -74,24 +74,30 @@ select {
   }
 }
 
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* utilities */
+.clearfix::after {
+    content: "";
+    overflow: auto;
+    clear: both;
 }
 
 /*  COMPONENTS */
 .btn {
-  background-color: #F4CE12;
+  background-color: #f4ce12;
   border: none;
   border-radius: 5px;
 }
@@ -100,13 +106,42 @@ code {
   padding: 0.5em;
   display: block;
   text-decoration: none;
-  color:#0f1311;;
+  color: #0f1311;
 }
 
 .btn:hover {
   cursor: pointer;
 }
 
+.card {
+  background-color: #ecefee;
+}
+
+.card__image {
+  border-radius: 15px;
+}
+
+.card__information {
+  padding: 1.5em 2em;
+}
+
+.card__information > *:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+.card__title {
+  float: left;
+}
+
+.card__price {
+  color: #eca584;
+  font-weight: 700;
+  float: right;
+}
+
+.card__desc {
+  line-height: 2em;
+}
 
 /* NAVIGATION STYLING */
 
@@ -127,7 +162,7 @@ code {
 }
 
 .nav__list {
-  background-color: #495E57;
+  background-color: #495e57;
   list-style: none;
   margin-top: 0;
   margin-left: -40px;
@@ -145,8 +180,8 @@ code {
   height: 533px;
 }
 
-.nav__list>*:not(:last-child) {
-  border-bottom: 1px solid #B89E13;
+.nav__list > *:not(:last-child) {
+  border-bottom: 1px solid #b89e13;
 }
 
 .nav__item {
@@ -173,7 +208,7 @@ code {
 
 .header {
   min-height: 50vh;
-  background-color: #495E57;
+  background-color: #495e57;
   color: #edefee;
   padding: 0 1em;
 }
@@ -187,7 +222,7 @@ code {
 }
 
 .header__title {
-  color: #B89E13;
+  color: #b89e13;
 }
 
 .header__location {
@@ -232,7 +267,7 @@ footer {
   }
 
   /* HEADER STYLES */
-  .header > .container  {
+  .header > .container {
     display: flex;
     flex-direction: column;
     align-items: center;
