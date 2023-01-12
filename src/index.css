@@ -88,6 +88,13 @@ code {
     monospace;
 }
 
+
+/* Utility class for displaying navbar back to original height. Had to set explicit height in order to animate. */
+
+.show--navbar {
+  height: 533px;
+}
+
 /*  COMPONENTS */
 .btn {
   background-color: #f4ce12;
@@ -106,8 +113,14 @@ code {
   cursor: pointer;
 }
 
+.specials .card {
+  margin: 3rem 0;
+}
+
 .card {
   background-color: #ecefee;
+  width: 100%;
+  max-width: 25rem;
 }
 
 .card__image {
@@ -193,11 +206,7 @@ code {
   transition: height 200ms;
 }
 
-/* Utility class for displaying navbar back to original height. Had to set explicit height in order to animate. */
 
-.show--navbar {
-  height: 533px;
-}
 
 .nav__list > *:not(:last-child) {
   border-bottom: 1px solid #b89e13;
