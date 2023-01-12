@@ -5,6 +5,8 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import Card from './components/Card';
 import greekSalad from './assets/greek salad.jpg'
+import bruchetta from './assets/bruchetta.jpg'
+import lemondDessert from './assets/lemonDessert.jpg'
 
 function App() {
   return (
@@ -27,6 +29,16 @@ function App() {
                 recipePrice="12.99"
                 recipeDesc="The famouse greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese style feta cheese, garnished with crunchy garlic and rosemary croutons."
                 recipeImg={greekSalad}
+              />
+              <Card recipeTitle="Bruchetta"
+                recipePrice="5.99"
+                recipeDesc="Our Bruchetta is made from grilled bread that has been smeared with garlic and seasond with salt and olive oil."
+                recipeImg={bruchetta}
+              />
+              <Card recipeTitle="Lemon Dessert"
+                recipePrice="5.00"
+                recipeDesc="This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined."
+                recipeImg={lemondDessert}
               />
             </div>
           </section>
