@@ -88,13 +88,6 @@ code {
     monospace;
 }
 
-/* utilities */
-.clearfix::after {
-    content: "";
-    overflow: auto;
-    clear: both;
-}
-
 /*  COMPONENTS */
 .btn {
   background-color: #f4ce12;
@@ -126,22 +119,48 @@ code {
 }
 
 .card__information > *:not(:last-child) {
-  margin-bottom: 0.5em;
+  margin-bottom: 1rem;
 }
 
-.card__title {
-  float: left;
+.card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card__price {
   color: #eca584;
   font-weight: 700;
-  float: right;
 }
 
 .card__desc {
   line-height: 2em;
 }
+
+.card__btn {
+  border: none;
+  background-color: #EBEFEE;
+  display: flex;
+  padding: 1rem 0;
+  align-items: center;
+}
+
+.card__btn:hover {
+  background-color: #EBEFEE;
+}
+
+.card__btn a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.card__icon {
+  width: 25px;
+  margin: 0 1rem;
+}
+
 
 /* NAVIGATION STYLING */
 
