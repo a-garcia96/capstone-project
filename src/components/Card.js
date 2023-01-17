@@ -12,15 +12,15 @@ const Card = ({ recipeTitle, recipePrice, recipeDesc, recipeImg }) => {
           <h3 className="card__title">{recipeTitle}</h3>
           <p className="card__price">${recipePrice}</p>
         </div>
-        <p className="card__desc">{recipeDesc}</p>
-        <button className="card__btn">
-          <a href="#">Order a delivery</a>
-          <img
-            className="card__icon"
-            src={deliveryBike}
-            alt="icon of a delivery bike"
-          />
-        </button>
+          <p className="card__desc">{recipeDesc}</p>
+          <button className="card__btn">
+            <a href="#">Order a delivery</a>
+            <img
+              className="card__icon"
+              src={deliveryBike}
+              alt="icon of a delivery bike"
+            />
+          </button>
       </div>
     </div>
   );
