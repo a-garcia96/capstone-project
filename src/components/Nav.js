@@ -17,7 +17,6 @@ const Nav = () => {
 
         navItemList.forEach(navItem => {
             navItem.classList.toggle("show--navItem")
-            console.log(navItem.classList)
         })
     }
 

@@ -91,10 +91,6 @@ code {
 
 /* Utility class for displaying navbar back to original height. Had to set explicit height in order to animate. */
 
-.show--navbar {
-  height: 533px;
-}
-
 /*  COMPONENTS */
 .btn {
   background-color: #f4ce12;
@@ -113,19 +109,30 @@ code {
   cursor: pointer;
 }
 
-.specials .row:nth-child(1) {
+.specials .row:nth-child(2) {
   display: flex;
-  justify-content: space-between;
-  margin: 3rem 0;
+  flex-direction: column;
 }
 
 .specials .card {
   margin: 3rem 0;
 }
 
+.specials__heading {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.specials__btn {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
 .card {
   background-color: #ecefee;
   width: 100%;
+  min-height: 100%;
+  max-width: 25rem;
 }
 
 .card__image {
@@ -134,17 +141,10 @@ code {
 
 .card__information {
   padding: 1.5em 2em;
-  border: 2px solid blue;
 }
 
 .card__information > *:not(:last-child) {
   margin-bottom: 1rem;
-}
-
-.card__row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .card__price {
@@ -180,6 +180,14 @@ code {
   margin: 0 1rem;
 }
 
+/* CONTAINER STYLES */
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  border: 2px solid red;
+}
+
 
 /* NAVIGATION STYLING */
 
@@ -200,38 +208,35 @@ code {
 }
 
 .nav__list {
-  background-color: #495e57;
+  background-color: #B0BEB9;
+  height: 0;
+  overflow: hidden;
   list-style: none;
   margin-top: 0;
   margin-left: -40px;
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 1;
-  height: 0;
-  transition: height 200ms;
+  z-index: 2;
+  transition: all 400ms linear;
 }
 
-
-
 .nav__list > *:not(:last-child) {
-  border-bottom: 1px solid #b89e13;
+  border-bottom: 2px solid #495E57;
 }
 
 .nav__item {
   text-align: center;
-  opacity: 0;
-  transition: opacity 50ms;
 }
 
 /* animation for showing the nav items. */
 
-.show--navItem {
-  opacity: 1;
+.show--navbar {
+  height: 533px;
 }
 
 .nav__link {
-  color: #c8cfcd;
+  color: #454B49;
   display: block;
   height: 100%;
   padding: 2em 0;
@@ -305,8 +310,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
-    margin: 0 auto;
   }
 
   .header__col-2 {
@@ -316,6 +319,10 @@ footer {
 }
 
 @media (min-width: 1000px) {
+
+  .container {
+    width: 960px;
+  }
 
   /* STYLING FOR THE HEADER */
   .header__image {
@@ -342,17 +349,10 @@ footer {
     align-self: center;
   }
 
-  .specials__btn {
-    margin-left: 25%;
-  }
-
-  .specials__btn {
-    font-size: 1.5em;
-  }
-
   .specials .row:nth-child(2) {
-    display: flex;
-    grid-column-gap: 20px;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
   }
 
   .card__desc {
@@ -360,15 +360,11 @@ footer {
   }
 
   .card__information{
-    margin-top: auto;
+    height: 69%;
   }
 }
 
 @media (min-width: 1300px) {
-  .container {
-    width: 1200px;
-    margin: 0 auto;
-  }
 
   .header > .container {
     flex-direction: row;
