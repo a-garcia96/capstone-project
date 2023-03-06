@@ -125,7 +125,6 @@ code {
 
 .specials__btn {
   width: 100%;
-  padding: 0.5rem 0;
 }
 
 .card {
@@ -133,6 +132,8 @@ code {
   width: 100%;
   min-height: 100%;
   max-width: 25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .card__image {
@@ -141,6 +142,10 @@ code {
 
 .card__information {
   padding: 1.5em 2em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card__information > *:not(:last-child) {
@@ -154,6 +159,10 @@ code {
 
 .card__desc {
   line-height: 40px;
+}
+
+.card__btn-wrapper {
+  margin-top: auto;
 }
 
 .card__btn {
@@ -185,7 +194,6 @@ code {
 .container {
   width: 90%;
   margin: 0 auto;
-  border: 2px solid red;
 }
 
 
@@ -258,6 +266,7 @@ code {
 
 .header__col-2 {
   padding: 2.5em 0;
+  position: relative;
 }
 
 .header__title {
@@ -325,10 +334,15 @@ footer {
   }
 
   /* STYLING FOR THE HEADER */
+
+  .header {
+    padding: 2rem 0;
+  }
+
   .header__image {
     position: absolute;
-    top: 30%;
-    right: 5%;
+    right: 0;
+    bottom: -11rem;
   }
 
   /* STYLING FOR THE SPECIALS SECTION */
@@ -347,6 +361,16 @@ footer {
   .specials__col-2 {
     width: 50%;
     align-self: center;
+    text-align: right;
+  }
+
+  .specials__btn {
+    max-width: 150px;
+  }
+
+  .specials .row:nth-child(1) {
+    display: flex;
+    flex-direction: row;
   }
 
   .specials .row:nth-child(2) {
@@ -358,10 +382,6 @@ footer {
   .card__desc {
     font-size: 16px;
   }
-
-  .card__information{
-    height: 69%;
-  }
 }
 
 @media (min-width: 1300px) {
@@ -370,7 +390,7 @@ footer {
     flex-direction: row;
   }
 
-  .header__col-1 {
-    width: 35%;
+  .header__image {
+    bottom: -26rem;
   }
 }

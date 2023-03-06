@@ -12,7 +12,8 @@ const Card = ({ recipeTitle, recipePrice, recipeDesc, recipeImg }) => {
           <h3 className="card__title">{recipeTitle}</h3>
           <p className="card__price">${recipePrice}</p>
         </div>
-          <p className="card__desc">{recipeDesc}</p>
+        <p className="card__desc">{recipeDesc}</p>
+        <div className="card__btn-wrapper">
           <button className="card__btn">
             <a href="#">Order a delivery</a>
             <img
@@ -21,6 +22,8 @@ const Card = ({ recipeTitle, recipePrice, recipeDesc, recipeImg }) => {
               alt="icon of a delivery bike"
             />
           </button>
+        </div>
+
       </div>
     </div>
   );
