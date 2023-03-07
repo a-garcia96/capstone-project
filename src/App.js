@@ -12,6 +12,8 @@ import portrait1 from './assets/portrait1.png';
 import portrait2 from './assets/portrait2.png';
 import portrait3 from './assets/portrait3.png';
 import portrait4 from './assets/portrait4.png';
+import crew1 from './assets/crew1.jpg'
+import crew2 from './assets/crew2.jpg'
 
 function App() {
   return (
@@ -87,6 +89,21 @@ function App() {
                     <p>Stefan</p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="location">
+          <div className="container">
+            <div className="location__row">
+              <div className="location__col">
+                <h2>Little Lemon</h2>
+                <h3>Chicago</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga temporibus ratione earum quibusdam deleniti dicta quisquam labore iure sequi. Inventore aspernatur corporis doloribus enim dicta rem fugiat id nostrum, ab quasi tempora quibusdam distinctio culpa nulla eligendi ratione iure pariatur corrupti similique! Nihil itaque quidem, incidunt corporis quos veritatis possimus.</p>
+              </div>
+              <div className="location__col">
+                <img className='location__image1' src={crew1} alt="" />
+                <img className='location__image2' src={crew2} alt="" />
               </div>
             </div>
           </div>
