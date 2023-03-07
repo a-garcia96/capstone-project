@@ -8,14 +8,19 @@ import greekSalad from './assets/greek salad.jpg'
 import bruchetta from './assets/bruchetta.jpg'
 import lemondDessert from './assets/lemonDessert.jpg'
 
+import portrait1 from './assets/portrait1.png';
+import portrait2 from './assets/portrait2.png';
+import portrait3 from './assets/portrait3.png';
+import portrait4 from './assets/portrait4.png';
+
 function App() {
   return (
     <>
       <Nav />
       <Header />
       <Main>
-        <div className="container">
-          <section className='specials'>
+        <section className='specials'>
+          <div className='container'>
             <div className="row">
               <div className="specials__col-1">
                 <h2 className='specials__heading'>This weeks specials!</h2>
@@ -41,8 +46,51 @@ function App() {
                 recipeImg={lemondDessert}
               />
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+        <section className='testimonials'>
+          <div className="container">
+            <h2>Testimonials</h2>
+            <div className="testimonials__row">
+              <div className="testimonials__col">
+                <div className="testimonials__card">
+                  <p>"I can't get enough of Little Lemon's zesty flavors! From the cozy atmosphere to the delicious food, it's the perfect spot for any occasion."</p>
+                  <div className="testimonials__card--author">
+                    <img className='testimonials__card--portrait' src={portrait1} alt="portrait of a client" />
+                    <p>Scott</p>
+                  </div>
+                </div>
+              </div>
+              <div className="testimonials__col">
+                <div className="testimonials__card">
+                  <p>"The best brunch I've had in ages! Little Lemon has such a refreshing take on classic dishes, and the service is always impeccable."</p>
+                  <div className="testimonials__card--author">
+                    <img className='testimonials__card--portrait' src={portrait3} alt="portrait of a client" />
+                    <p>Jasmine</p>
+                  </div>
+                </div>
+              </div>
+              <div className="testimonials__col">
+                <div className="testimonials__card">
+                  <p>"Little Lemon's commitment to using fresh, local ingredients is evident in every dish. The menu is diverse, and the prices are incredibly reasonable."</p>
+                  <div className="testimonials__card--author">
+                    <img className='testimonials__card--portrait' src={portrait2} alt="portrait of a client" />
+                    <p>Andrea</p>
+                  </div>
+                </div>
+              </div>
+              <div className="testimonials__col">
+                <div className="testimonials__card">
+                  <p>"If you're looking for a new go-to spot, Little Lemon is it. The cocktails are top-notch, and the staff is incredibly friendly and knowledgeable."</p>
+                  <div className="testimonials__card--author">
+                    <img className='testimonials__card--portrait' src={portrait4} alt="portrait of a client" />
+                    <p>Stefan</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </Main>
       <Footer />
     </>
