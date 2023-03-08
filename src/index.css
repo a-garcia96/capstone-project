@@ -208,7 +208,7 @@ p {
   position: relative;
 }
 
-.nav__header {
+.nav__header > .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -220,12 +220,12 @@ p {
   border: none;
 }
 
-.nav__list {
+.nav__list--mobile {
   background-color: #B0BEB9;
   height: 0;
   overflow: hidden;
   list-style: none;
-  margin-top: 0;
+  margin-top: 72px;
   margin-left: -40px;
   position: absolute;
   left: 0;
@@ -234,12 +234,16 @@ p {
   transition: all 400ms linear;
 }
 
-.nav__list>*:not(:last-child) {
+.nav__list--mobile>*:not(:last-child) {
   border-bottom: 2px solid #495E57;
 }
 
 .nav__item {
   text-align: center;
+}
+
+.nav__list--desktop {
+  display: none;
 }
 
 /* animation for showing the nav items. */
@@ -259,7 +263,6 @@ p {
 /* HEADER STYLING */
 
 .header {
-  min-height: 50vh;
   background-color: #495e57;
   color: #edefee;
   padding: 0 1em;
@@ -387,16 +390,45 @@ footer {
     width: 960px;
   }
 
+  /* STYLING FOR NAV */
+
+  .nav__header > .container {
+    padding: 0;
+  }
+
+  .nav button {
+    display: none;
+  }
+
+  .nav__list--mobile {
+    display: none;
+  }
+
+  .nav__list--desktop {
+    display: flex;
+    width: 65%;
+    justify-content: space-between;
+  }
+
+  .nav__item {
+    text-align: left;
+    list-style: none;
+  }
+
   /* STYLING FOR THE HEADER */
 
   .header {
     padding: 2rem 0;
   }
 
+  .header > .container {
+    flex-direction: row;
+  }
+
   .header__image {
     position: absolute;
     right: 0;
-    bottom: -11rem;
+    bottom: -16rem;
   }
 
   /* STYLING FOR THE SPECIALS SECTION */
@@ -472,21 +504,21 @@ footer {
   .location__col > img {
     position: absolute;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    height: 300px;
+    height: 250px;
     object-fit: cover;
-    object-position: top right;
+    object-position: top center;
   }
 
   .location__image1 {
-    top: -5rem;
-    right: -5rem;
-    z-index: 5;
+    top: 10rem;
+    right: 0rem;
+    z-index: 0;
   }
 
   .location__image2 {
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: 5;
   }
 }
 
@@ -496,7 +528,4 @@ footer {
     flex-direction: row;
   }
 
-  .header__image {
-    bottom: -26rem;
-  }
 }
