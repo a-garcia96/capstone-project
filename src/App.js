@@ -99,7 +99,7 @@ function App() {
               <div className="location__col">
                 <h2>Little Lemon</h2>
                 <h3>Chicago</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga temporibus ratione earum quibusdam deleniti dicta quisquam labore iure sequi. Inventore aspernatur corporis doloribus enim dicta rem fugiat id nostrum, ab quasi tempora quibusdam distinctio culpa nulla eligendi ratione iure pariatur corrupti similique! Nihil itaque quidem, incidunt corporis quos veritatis possimus.</p>
+                <p>Little Lemon is a charming restaurant located in the heart of Chicago. The space is cozy and inviting, with warm lighting and rustic wooden tables. The walls are adorned with lemon-themed decor, adding a touch of whimsy to the atmosphere. The menu features fresh, seasonal ingredients and creative dishes with a Mediterranean flair. From lemony grilled chicken to citrus-infused salads, every dish is bursting with flavor. The staff is friendly and attentive, making for a delightful dining experience. Whether you're in the mood for a leisurely brunch or a romantic dinner, Little Lemon is the perfect spot to satisfy your cravings.</p>
               </div>
               <div className="location__col">
                 <img className='location__image1' src={crew1} alt="" />
