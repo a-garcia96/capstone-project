@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import ErrorPage from './routes/ErrorPage';
 import About from './routes/About';
+import Menu from './routes/Menu';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -13,6 +14,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "about",
     element: <About />,
+  },
+  {
+    path: "menu",
+    element: <Menu />
   }
 ]);
 

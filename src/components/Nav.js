@@ -41,7 +41,7 @@ const Nav = () => {
               <NavLink to={"/about"} className="nav__link">About</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Menu</NavLink>
+              <NavLink to={'/menu'} className="nav__link">Menu</NavLink>
             </li>
             <li className="nav__item">
               <NavLink className="nav__link">Reservations</NavLink>
@@ -61,7 +61,7 @@ const Nav = () => {
               <NavLink to={'/about'} className="nav__link">About</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Menu</NavLink>
+              <NavLink to={'/menu'} className="nav__link">Menu</NavLink>
             </li>
             <li className="nav__item">
               <NavLink className="nav__link">Reservations</NavLink>
