@@ -267,6 +267,10 @@ p {
   display: none;
 }
 
+.nav__item a {
+  text-decoration: none;
+}
+
 /* animation for showing the nav items. */
 
 .show--navbar {
