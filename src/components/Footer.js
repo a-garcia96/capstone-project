@@ -1,6 +1,7 @@
 import React from 'react'
 
 import image from "../assets/restaurantfood.jpg";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -14,22 +15,22 @@ const Footer = () => {
             <h3>Navigation</h3>
             <ul className="nav__list--footer">
             <li className="nav__item">
-              <a className="nav__link">Home</a>
+              <Link to={'/'} className="nav__link">Home</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">About</a>
+              <Link to={'/about'} className="nav__link">About</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Menu</a>
+              <Link to={'/menu'} className="nav__link">Menu</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Reservations</a>
+              <Link to={'/reservation'} className="nav__link">Reservations</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Order Online</a>
+              <Link to={'/order'} className="nav__link">Order Online</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Login</a>
+              <Link to={'/login'} className="nav__link">Login</Link>
             </li>
           </ul>
           </div>

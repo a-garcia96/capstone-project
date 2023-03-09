@@ -37,16 +37,16 @@ const Nav = () => {
               <Link to={"/about"} className="nav__link">About</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Menu</a>
+              <Link className="nav__link">Menu</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Reservations</a>
+              <Link className="nav__link">Reservations</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Order Online</a>
+              <Link className="nav__link">Order Online</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Login</a>
+              <Link className="nav__link">Login</Link>
             </li>
           </ul>
           <ul className="nav__list--desktop">
@@ -57,16 +57,16 @@ const Nav = () => {
               <Link to={'/about'} className="nav__link">About</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Menu</a>
+              <Link className="nav__link">Menu</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Reservations</a>
+              <Link className="nav__link">Reservations</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Order Online</a>
+              <Link className="nav__link">Order Online</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">Login</a>
+              <Link className="nav__link">Login</Link>
             </li>
           </ul>
         </div>
