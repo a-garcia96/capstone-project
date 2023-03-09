@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 import Logo from "../assets/Logo.svg";
 import Menu from "../assets/hamburgerMenuIcon.svg";
@@ -30,10 +31,10 @@ const Nav = () => {
           </button>
           <ul ref={navRef} className="nav__list--mobile">
             <li className="nav__item">
-              <a className="nav__link">Home</a>
+              <Link to={'/'} className="nav__link">Home</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">About</a>
+              <Link to={"/about"} className="nav__link">About</Link>
             </li>
             <li className="nav__item">
               <a className="nav__link">Menu</a>
@@ -50,10 +51,10 @@ const Nav = () => {
           </ul>
           <ul className="nav__list--desktop">
             <li className="nav__item">
-              <a className="nav__link">Home</a>
+              <Link to={'/'} className="nav__link">Home</Link>
             </li>
             <li className="nav__item">
-              <a className="nav__link">About</a>
+              <Link to={'/about'} className="nav__link">About</Link>
             </li>
             <li className="nav__item">
               <a className="nav__link">Menu</a>
