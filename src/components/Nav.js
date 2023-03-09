@@ -1,11 +1,15 @@
 import React from "react";
 import { useRef } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import Logo from "../assets/Logo.svg";
 import Menu from "../assets/hamburgerMenuIcon.svg";
 
 const Nav = () => {
+
+  let location = useLocation();
+
+  console.log(location.pathname);
 
   const navRef = useRef(null)
 
@@ -31,42 +35,42 @@ const Nav = () => {
           </button>
           <ul ref={navRef} className="nav__list--mobile">
             <li className="nav__item">
-              <Link to={'/'} className="nav__link">Home</Link>
+              <NavLink to={'/'} className="nav__link">Home</NavLink>
             </li>
             <li className="nav__item">
-              <Link to={"/about"} className="nav__link">About</Link>
+              <NavLink to={"/about"} className="nav__link">About</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Menu</Link>
+              <NavLink className="nav__link">Menu</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Reservations</Link>
+              <NavLink className="nav__link">Reservations</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Order Online</Link>
+              <NavLink className="nav__link">Order Online</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Login</Link>
+              <NavLink className="nav__link">Login</NavLink>
             </li>
           </ul>
           <ul className="nav__list--desktop">
             <li className="nav__item">
-              <Link to={'/'} className="nav__link">Home</Link>
+              <NavLink to={'/'} className="nav__link">Home</NavLink>
             </li>
             <li className="nav__item">
-              <Link to={'/about'} className="nav__link">About</Link>
+              <NavLink to={'/about'} className="nav__link">About</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Menu</Link>
+              <NavLink className="nav__link">Menu</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Reservations</Link>
+              <NavLink className="nav__link">Reservations</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Order Online</Link>
+              <NavLink className="nav__link">Order Online</NavLink>
             </li>
             <li className="nav__item">
-              <Link className="nav__link">Login</Link>
+              <NavLink className="nav__link">Login</NavLink>
             </li>
           </ul>
         </div>
