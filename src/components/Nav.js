@@ -44,13 +44,13 @@ const Nav = () => {
               <NavLink to={'/menu'} className="nav__link">Menu</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Reservations</NavLink>
+              <NavLink to={'/reservations'}className="nav__link">Reservations</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Order Online</NavLink>
+              <NavLink to={'/order'} className="nav__link">Order Online</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Login</NavLink>
+              <NavLink to={'/login'} className="nav__link">Login</NavLink>
             </li>
           </ul>
           <ul className="nav__list--desktop">
@@ -64,13 +64,13 @@ const Nav = () => {
               <NavLink to={'/menu'} className="nav__link">Menu</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Reservations</NavLink>
+              <NavLink to={'/reservations'} className="nav__link">Reservations</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Order Online</NavLink>
+              <NavLink to={'/order'} className="nav__link">Order Online</NavLink>
             </li>
             <li className="nav__item">
-              <NavLink className="nav__link">Login</NavLink>
+              <NavLink to={'/login'} className="nav__link">Login</NavLink>
             </li>
           </ul>
         </div>

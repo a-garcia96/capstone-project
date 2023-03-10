@@ -6,6 +6,7 @@ import App from './App';
 import ErrorPage from './routes/ErrorPage';
 import About from './routes/About';
 import Menu from './routes/Menu';
+import Reservations from './routes/Reservations';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "menu",
     element: <Menu />
+  },
+  {
+    path: "reservations",
+    element: <Reservations />
   }
 ]);
 
