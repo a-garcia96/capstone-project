@@ -263,6 +263,10 @@ p {
   text-align: center;
 }
 
+a.active {
+  color: #b89e13;
+}
+
 .nav__list--desktop {
   display: none;
 }
