@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 
-import BookingForm from '../components/BookingForm'
+import BookingForm from '../components/BookingForm/BookingForm'
 
 
 
