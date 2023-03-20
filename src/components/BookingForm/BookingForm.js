@@ -6,19 +6,20 @@ import './bookingForm.css'
 const BookingForm = () => {
 
     const [reservationDetails, setReservationDetails] = useState({
-            date: null,
-            time: null,
-            guests: 0
-        })
+        date: null,
+        time: null,
+        guests: 0,
+        occassion: null
+    })
     const [isReserved, setIsReserved] = useState(false)
 
-    const handleChange = ({target}) => {
-        
+    const handleChange = ({ target }) => {
+
         let field = target.dataset.type
 
-        switch(field) {
+        switch (field) {
             case "day":
-                const formattedDate = new Date(target.value).toLocaleDateString('en-gb', {year: 'numeric', month: 'long', day: 'numeric'});
+                const formattedDate = new Date(target.value).toLocaleDateString('en-gb', { year: 'numeric', month: 'long', day: 'numeric' });
                 setReservationDetails({
                     ...reservationDetails,
                     date: formattedDate
@@ -39,6 +40,11 @@ const BookingForm = () => {
                 })
                 console.log(`There are ${target.value} guests expected`);
                 break;
+            case "occassion":
+                setReservationDetails({
+                    ...reservationDetails,
+                    occassion: target.value
+                })
         }
     }
 
@@ -51,23 +57,25 @@ const BookingForm = () => {
     return (
         <>
             {isReserved &&
-                <div>
+                <div className='reservation-confirmation'>
                     <h2> Thank you for your reservation!</h2>
                     <p>Here are your reservation details.</p>
                     <p><strong>Day</strong>: {reservationDetails.date}</p>
                     <p><strong>Time</strong>: {reservationDetails.time}</p>
                     <p><strong>Guests</strong>: {reservationDetails.guests}</p>
+                    <p><strong>Occassion</strong>: {reservationDetails.occassion}</p>
                 </div>
             }
-            {!isReserved && 
+            {!isReserved &&
                 <form className='booking-form' onSubmit={handleSubmit}>
-                <label>
-                    Pick a Day
-                    <input data-type="day" type="date" onChange={handleChange}/>
-                </label>
-                <label>
-                    Pick a Time
-                    <select data-type="time" onChange={handleChange}>
+                    <label>
+                        Pick a Day
+                    </label>
+                    <input required data-type="day" type="date" onChange={handleChange} />
+                    <label>
+                        Pick a Time
+                    </label>
+                    <select required data-type="time" onChange={handleChange}>
                         <option>10:00 AM</option>
                         <option>10:30 AM</option>
                         <option>11:00 AM</option>
@@ -94,19 +102,26 @@ const BookingForm = () => {
                         <option>9:30 PM</option>
                         <option>10:00 PM</option>
                     </select>
-                </label>
-                <label>
-                    How Many Guests?
-                    <select data-type="guests" onChange={handleChange}>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </label>
-                <input data-type="button" type="submit" value="Make Reservation" />
-            </form>
+                    <label>
+                        How Many Guests?
+                    </label>
+                    <select required data-type="guests" onChange={handleChange}>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    <label>
+                        Occassion
+                    </label>
+                    <select data-type="occassion" onChange={handleChange}>
+                            <option selected="selected">None</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                        </select>
+                    <input data-type="button" type="submit" value="Book" />
+                </form>
             }
 
 
