@@ -9,12 +9,10 @@ const Nav = () => {
 
   let location = useLocation();
 
-  console.log(location.pathname);
 
   const navRef = useRef(null)
 
   const handleClick = (e) => {
-    // console.log(navRef.current);
     const nav = navRef.current;
     const navItemList = document.querySelectorAll(".nav__item")
 
