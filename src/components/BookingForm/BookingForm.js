@@ -1,34 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { BookingContext } from "../Main";
 import "./bookingForm.css";
 
 const BookingForm = () => {
-  const [availableTimes, setAvailableTimes] = useState([
-    "10:00 AM",
-    "10:30 AM",
-    "11:00 AM",
-    "11:30 AM",
-    "12:00 PM",
-    "12:30 PM",
-    "1:00 PM",
-    "1:30 PM",
-    "2:00 PM",
-    "2:30 PM",
-    "3:00 PM",
-    "3:30 PM",
-    "4:00 PM",
-    "4:30 AM",
-    "5:00 PM",
-    "5:30 PM",
-    "6:00 PM",
-    "6:30 PM",
-    "7:00 PM",
-    "7:30 PM",
-    "8:00 PM",
-    "8:30 PM",
-    "9:00 PM",
-    "9:30 PM",
-    "10:00 PM",
-  ]);
+
+    const {bookingState, bookingDispatch, availableTimes} = useContext(BookingContext);
+
+    useEffect(() => {
+        console.log(bookingState)
+    }, [bookingState])
 
   const [reservationDetails, setReservationDetails] = useState({
     date: null,
@@ -43,25 +23,23 @@ const BookingForm = () => {
 
     switch (field) {
       case "day":
-        const formattedDate = new Date(target.value).toLocaleDateString(
-          "en-gb",
-          { year: "numeric", month: "long", day: "numeric" }
-        );
+        console.log(`The unformatted date is ${target.value}`)
+        const formattedDate = new Date(target.value).toLocaleDateString("en-us", { year:"numeric", month: "short", day: "numeric", timeZone: "UTC" });
+        console.log(`The formatted date is ${formattedDate}`)
         setReservationDetails({
           ...reservationDetails,
           date: formattedDate,
         });
-        console.log(`The date selected was ${formattedDate}`);
+        bookingDispatch({type: 'SELECT_DATE', payload: formattedDate})
+        console.log(`The date selected was ${formattedDate}`)
         break;
       case "time":
-        const updatedTimes = availableTimes.filter(time => time !== target.value)
-        setAvailableTimes([...updatedTimes])
-
         setReservationDetails({
           ...reservationDetails,
           time: target.value,
-        });
-        console.log(`The time selected was ${target.value}`);
+        })
+        bookingDispatch({type: 'SELECT_TIME', payload: target.value})
+        console.log(`The time selected was ${target.value}`)
         break;
       case "guests":
         setReservationDetails({
@@ -80,6 +58,7 @@ const BookingForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    bookingDispatch({type: 'BOOK_TIMESLOT', payload: {date: reservationDetails.date, time: reservationDetails.time }})
     setIsReserved(true);
     console.log(reservationDetails);
   }
@@ -115,7 +94,7 @@ const BookingForm = () => {
           <input required data-type="day" type="date" onChange={handleChange} />
           <label>Pick a Time</label>
           <select required data-type="time" onChange={handleChange}>
-            {availableTimes.map(time => <option>{time}</option>)}
+            {availableTimes.map(time => <option key={time}>{time}</option>)}
           </select>
           <label>How Many Guests?</label>
           <select required data-type="guests" onChange={handleChange}>
@@ -127,7 +106,7 @@ const BookingForm = () => {
           </select>
           <label>Occassion</label>
           <select data-type="occassion" onChange={handleChange}>
-            <option selected="selected">None</option>
+            <option>None</option>
             <option>Birthday</option>
             <option>Anniversary</option>
           </select>
