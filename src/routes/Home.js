@@ -13,10 +13,15 @@ import crew2 from '../assets/crew2.jpg'
 
 // IMPORT COMPONENTS
 import Card from '../components/Card';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Nav from "../components/Nav";
 
 const Home = () => {
   return (
     <>
+    <Nav />
+    <Header />
       <section className="specials">
         <div className="container">
           <div className="row">
@@ -153,6 +158,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
