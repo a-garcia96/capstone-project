@@ -8,7 +8,7 @@ import BookingForm from '../components/BookingForm/BookingForm'
 
 
 
-const Reservations = ({availableTimes, bookingReducer, initialState}) => {
+const Reservations = () => {
 
     return (
         <>
@@ -22,7 +22,7 @@ const Reservations = ({availableTimes, bookingReducer, initialState}) => {
                 <section></section>
                 <section>
                     <div className="container">
-                        <BookingForm availableTimes={availableTimes}/>
+                        <BookingForm />
                     </div>
                 </section>
             </main>

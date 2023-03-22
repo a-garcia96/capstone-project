@@ -91,13 +91,13 @@ const BookingForm = () => {
       {!isReserved && (
         <form className="booking-form" onSubmit={handleSubmit}>
           <label>Pick a Day</label>
-          <input required data-type="day" type="date" onChange={handleChange} />
+          <input data-testid="dateInput" required data-type="day" type="date" onChange={handleChange} />
           <label>Pick a Time</label>
-          <select required data-type="time" onChange={handleChange}>
+          <select data-testid="timeInput" required data-type="time" onChange={handleChange}>
             {availableTimes.map(time => <option key={time}>{time}</option>)}
           </select>
           <label>How Many Guests?</label>
-          <select required data-type="guests" onChange={handleChange}>
+          <select data-testid="guestInput" required data-type="guests" onChange={handleChange}>
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -105,7 +105,7 @@ const BookingForm = () => {
             <option>5</option>
           </select>
           <label>Occassion</label>
-          <select data-type="occassion" onChange={handleChange}>
+          <select data-testid="occasionInput" data-type="occassion" onChange={handleChange}>
             <option>None</option>
             <option>Birthday</option>
             <option>Anniversary</option>
