@@ -2,6 +2,33 @@ import React, { useEffect, useState, useContext } from "react";
 import { BookingContext } from "../Main";
 import "./bookingForm.css";
 
+const BookingConfirmation = ({ date, time, guests, occasion, isReserved, setIsReserved }) => {
+
+  const handleClick = () => {
+    setIsReserved(false);
+  }
+
+  return (
+<div className="reservation-confirmation">
+          <h2> Thank you for your reservation!</h2>
+          <p>Here are your reservation details.</p>
+          <p>
+            <strong>Day</strong>: {date}
+          </p>
+          <p>
+            <strong>Time</strong>: {time}
+          </p>
+          <p>
+            <strong>Guests</strong>: {guests}
+          </p>
+          <p>
+            <strong>Occassion</strong>: {occasion}
+          </p>
+          <button onClick={handleClick} className="btn">Make another reservation</button>
+        </div>
+  )
+}
+
 const BookingForm = () => {
 
     const {bookingState, bookingDispatch, availableTimes} = useContext(BookingContext);
@@ -23,9 +50,7 @@ const BookingForm = () => {
 
     switch (field) {
       case "day":
-        console.log(`The unformatted date is ${target.value}`)
         const formattedDate = new Date(target.value).toLocaleDateString("en-us", { year:"numeric", month: "short", day: "numeric", timeZone: "UTC" });
-        console.log(`The formatted date is ${formattedDate}`)
         setReservationDetails({
           ...reservationDetails,
           date: formattedDate,
@@ -63,30 +88,16 @@ const BookingForm = () => {
     console.log(reservationDetails);
   }
 
-  const handleClick = () => {
-    setIsReserved(false);
-  }
-
   return (
     <>
       {isReserved && (
-        <div className="reservation-confirmation">
-          <h2> Thank you for your reservation!</h2>
-          <p>Here are your reservation details.</p>
-          <p>
-            <strong>Day</strong>: {reservationDetails.date}
-          </p>
-          <p>
-            <strong>Time</strong>: {reservationDetails.time}
-          </p>
-          <p>
-            <strong>Guests</strong>: {reservationDetails.guests}
-          </p>
-          <p>
-            <strong>Occassion</strong>: {reservationDetails.occassion}
-          </p>
-          <button onClick={handleClick} className="btn">Make another reservation</button>
-        </div>
+        <BookingConfirmation
+          date={reservationDetails.date}
+          time={reservationDetails.time}
+          guests={reservationDetails.guests}
+          occasion={reservationDetails.occassion}
+          isReserved={isReserved}
+          setIsReserved={setIsReserved} />
       )}
       {!isReserved && (
         <form className="booking-form" onSubmit={handleSubmit}>
