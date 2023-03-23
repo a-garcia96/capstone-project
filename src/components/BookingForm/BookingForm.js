@@ -62,8 +62,8 @@ const BookingForm = () => {
   };
 
   useEffect(() => {
-    formValidation()
-  }, [reservationDetails])
+    formValidation();
+  }, [reservationDetails]);
 
   const handleChange = ({ target }) => {
     let field = target.dataset.type;
@@ -100,7 +100,7 @@ const BookingForm = () => {
         });
         break;
       default:
-        console.log('Nothing Happened')
+        console.log("Nothing Happened");
     }
   };
 
@@ -128,32 +128,38 @@ const BookingForm = () => {
       )}
       {!isReserved && (
         <form className="booking-form" onSubmit={handleSubmit}>
-          <label>Pick a Day</label>
+          <label for="date">Pick a Day</label>
           <input
+            aria-label="On Click"
             data-testid="dateInput"
             required
             data-type="day"
             type="date"
             onChange={handleChange}
+            id="date"
           />
-          <label>Pick a Time</label>
+          <label for="time">Pick a Time</label>
           <select
             data-testid="timeInput"
             required
             data-type="time"
             onChange={handleChange}
+            aria-label="On Click"
+            id="time"
           >
             {availableTimes.map((time) => (
               <option key={time}>{time}</option>
             ))}
           </select>
-          <label>How Many Guests?</label>
+          <label for="guests">How Many Guests?</label>
           <select
             data-testid="guestInput"
             required
             data-type="guests"
             onChange={handleChange}
             defaultValue=""
+            aria-label="On Click"
+            id="guests"
           >
             <option>1</option>
             <option>2</option>
@@ -161,13 +167,15 @@ const BookingForm = () => {
             <option>4</option>
             <option>5</option>
           </select>
-          <label>Occassion</label>
+          <label for="occasion">Occassion</label>
           <select
             data-testid="occasionInput"
             data-type="occassion"
             onChange={handleChange}
             required
             value=""
+            aria-label="On Click"
+            id="occasion"
           >
             <option>None</option>
             <option>Birthday</option>
@@ -178,6 +186,7 @@ const BookingForm = () => {
             data-type="button"
             type="submit"
             value="Book"
+            aria-label="On Click"
           />
         </form>
       )}
