@@ -37,6 +37,15 @@
     font-weight: 700;
 }
 
+.booking-form input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+.booking-form input[type="submit"]:disabled {
+    background-color: #E9E9ED;
+    cursor: default;
+}
+
 .reservation-confirmation {
     display: flex;
     flex-direction: column;
