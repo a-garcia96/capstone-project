@@ -153,6 +153,7 @@ const BookingForm = () => {
             required
             data-type="guests"
             onChange={handleChange}
+            defaultValue=""
           >
             <option>1</option>
             <option>2</option>
@@ -166,6 +167,7 @@ const BookingForm = () => {
             data-type="occassion"
             onChange={handleChange}
             required
+            value=""
           >
             <option>None</option>
             <option>Birthday</option>
